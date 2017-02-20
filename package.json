@@ -1,0 +1,19 @@
+{
+    "name": "home",
+    "version": "0.10.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": ""
+    },
+    "author": "wgch",
+    "license": "ISC",
+    "dependencies": {},
+    "devDependencies": {
+        "gulp-nunjucks-render": "^2.0.0",
+        "browser-sync": "^2.17.3",
+        "gulp": "^3.9.1",
+        "gulp-rename": "^1.2.2",
+        "gulp-sass": "^2.3.2"
+    }
+}

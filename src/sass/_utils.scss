@@ -1,0 +1,520 @@
+@mixin height($divider){
+    $max-height: 720px;
+    height: $max-height/$divider !important;
+}
+.height{
+    &-xl {
+        @include height(1);
+    }
+    &-lg {
+        @include height(2);
+    }
+    &-md {
+        @include height(3);
+    }
+    &-sm {
+        @include height(4);
+    }
+    &-xs {
+        @include height(5);
+    }
+    &-xx {
+        @include height(10);
+    }
+    &-full {
+        height: 100% !important;
+        position: relative;
+    }
+}
+
+// Variables    
+$btn-bottom-width: 3px;
+
+$spacing-md: 15px;
+$spacing-sm: $spacing-md/2;
+$spacing-xs: $spacing-sm/2;
+$spacing-lg: $spacing-md*2;
+$spacing-xl: $spacing-lg*2;
+
+// Mixins
+@mixin space($property, $size){
+    $default-size: 15px;
+    @if $size == xl {
+        $property: $default-size*4;
+    } @else if $size == lg {
+        $property: $default-size*2;
+    } @else if $size == md {
+        $property: $default-size;
+    } @else if $size == sm {
+        $property: $default-size/2;
+    } @else if $size == xs {
+        $property: $default-size/4;
+    }
+}
+@mixin spacer($property, $loc){
+    @if $loc {
+        &-#{$loc}{
+            &-xlg{
+                #{$property}-#{$loc}: $spacing-xl;
+            }
+            &-lg{
+                #{$property}-#{$loc}: $spacing-lg;
+            }
+            &-md{
+                #{$property}-#{$loc}: $spacing-md;
+            }
+            &-sm{
+                #{$property}-#{$loc}: $spacing-sm;
+            }
+            &-xs{
+                #{$property}-#{$loc}: $spacing-xs;
+            }
+        }
+    } @else {
+        &-xs{
+            #{$property}: $spacing-xs;
+        }
+        &-sm{
+            #{$property}: $spacing-sm;
+        }
+        &-md{
+            #{$property}: $spacing-md;
+        }
+        &-lg{
+            #{$property}: $spacing-lg;
+        }
+        &-xlg{
+            #{$property}: $spacing-xl;
+        }
+    }
+}
+@mixin border-radius {
+    border-radius: $border-radius;
+}
+
+.no-pad{
+    padding: 0;
+    margin: 0;
+}
+
+.padding {
+    $property: padding;
+
+    &-0{
+        #{$property}: 0 !important;
+    }
+
+    &-xl{
+        #{$property}: $spacing-xl;
+    }
+    &-lg{
+        #{$property}: $spacing-lg;
+    }
+    &-md{
+        #{$property}: $spacing-md;
+    }
+    &-sm{
+        #{$property}: $spacing-sm;
+    }
+    &-xs{
+        #{$property}: $spacing-xs;
+    }
+
+    &-left{
+        &-0{
+            #{$property}-left: 0 !important;
+        }
+        &-xl{
+            #{$property}-left: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-left: $spacing-lg;
+        }
+        &-md{
+            #{$property}-left: $spacing-md;
+        }
+        &-sm{
+            #{$property}-left: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-left: $spacing-xs;
+        }
+    }
+
+    &-right{
+        &-0{
+            #{$property}-right: 0 !important;
+        }
+        &-xl{
+            #{$property}-right: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-right: $spacing-lg;
+        }
+        &-md{
+            #{$property}-right: $spacing-md;
+        }
+        &-sm{
+            #{$property}-right: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-right: $spacing-xs;
+        }
+    }
+
+    &-top{
+        &-0{
+            #{$property}-top: 0 !important;
+        }
+        &-xl{
+            #{$property}-top: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-top: $spacing-lg;
+        }
+        &-md{
+            #{$property}-top: $spacing-md;
+        }
+        &-sm{
+            #{$property}-top: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-top: $spacing-xs;
+        }
+    }
+
+    &-bottom{
+        &-0{
+            #{$property}-bottom: 0 !important;
+        }
+        &-xl{
+            #{$property}-bottom: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-bottom: $spacing-lg;
+        }
+        &-md{
+            #{$property}-bottom: $spacing-md;
+        }
+        &-sm{
+            #{$property}-bottom: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-bottom: $spacing-xs;
+        }
+    }
+}
+
+.margin {
+    $property: margin;
+
+    &-0{
+        #{$property}: 0 !important;
+    }
+
+    &-xs{
+        #{$property}: $spacing-xs;
+    }
+    &-sm{
+        #{$property}: $spacing-sm;
+    }
+    &-md{
+        #{$property}: $spacing-md;
+    }
+    &-lg{
+        #{$property}: $spacing-lg;
+    }
+    &-xl{
+        #{$property}: $spacing-xl;
+    }
+
+    &-left{
+        &-0{
+            #{$property}-left: 0 !important;
+        }
+        &-xl{
+            #{$property}-left: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-left: $spacing-lg;
+        }
+        &-md{
+            #{$property}-left: $spacing-md;
+        }
+        &-sm{
+            #{$property}-left: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-left: $spacing-xs;
+        }
+    }
+
+    &-right{
+        &-0{
+            #{$property}-right: 0 !important;
+        }
+        &-xl{
+            #{$property}-right: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-right: $spacing-lg;
+        }
+        &-md{
+            #{$property}-right: $spacing-md;
+        }
+        &-sm{
+            #{$property}-right: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-right: $spacing-xs;
+        }
+    }
+
+    &-top{
+        &-0{
+            #{$property}-top: 0 !important;
+        }
+        &-xl{
+            #{$property}-top: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-top: $spacing-lg;
+        }
+        &-md{
+            #{$property}-top: $spacing-md;
+        }
+        &-sm{
+            #{$property}-top: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-top: $spacing-xs;
+        }
+    }
+
+    &-bottom{
+        &-0{
+            #{$property}-bottom: 0 !important;
+        }
+        &-xl{
+            #{$property}-bottom: $spacing-xl;
+        }
+        &-lg{
+            #{$property}-bottom: $spacing-lg;
+        }
+        &-md{
+            #{$property}-bottom: $spacing-md;
+        }
+        &-sm{
+            #{$property}-bottom: $spacing-sm;
+        }
+        &-xs{
+            #{$property}-bottom: $spacing-xs;
+        }
+    }
+}
+
+.position {
+    &-fixed{
+        position: fixed;
+    }
+    &-absolute{
+        position: absolute;
+    }
+    &-relative{
+        position: relative;
+    }
+}
+
+
+/* Globals */
+// @import url(https://fonts.googleapis.com/css?family=Source+Sans);
+* {
+    font-family:  sans-serif;
+    color: inherit;
+}
+a, a:hover, a:visited, a:focus{
+    text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6{
+    padding: 0;
+    margin: 0;
+    color: inherit;
+}
+
+/* Misc */
+.va-middle{
+    vertical-align: middle;
+}
+.overflow{
+    &-scroll{
+        overflow-y: auto;
+    }
+    &-hidden{
+        overflow: hidden;
+    }
+}
+ul.list-unpadded,
+.list-unpadded:before,
+.list-unpadded:after{
+    padding-left: 15px !important;
+}
+.strong{
+    font-weight: bold;
+}
+.pointer{
+    cursor: pointer;
+}
+.full-width{
+    width: 100%;
+}
+.material-icons{
+    font-size: inherit;
+    line-height: 1;
+    display: inline-block;
+}
+.capitalize{
+    text-transform: capitalize;
+}
+.step{
+    padding: 10px 14px;
+    background: $brand-blue;
+    color: #fff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    float: right;
+    display: inline;
+}
+.text-lg{
+    font-size: 1.3em;
+    line-height: 1em;
+}
+.list-unstyled-mod{
+    list-style: none;
+}
+.breadcrumb{
+    background-color: transparent !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+}
+.truncate {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.divider{
+    width: 100%;
+    display: inline-block;
+    border-top: $brand-grey-lighter solid 1px;
+}
+.inline{
+    display: inline;
+    &-block{
+        display: inline-block;
+        vertical-align: top;
+    }
+    &-table{
+        display: table-cell;
+        vertical-align: top;
+    }
+}
+
+.transparent{
+    opacity: 0.4;
+    &:hover{
+        opacity: 1;
+    }
+}
+
+/* Modified Bootstrap elements */
+.modal{
+    padding-top: 3%;
+    overflow: auto;
+
+    &-backdrop{
+        background-color: #fff;
+        &.in{
+            opacity: .97;
+        }
+    }
+    &-content {
+        position: relative;
+        background-color: transparent;
+        -webkit-background-clip: padding-box;
+        background-clip: padding-box;
+        border: none;
+        border-radius: 0;
+        outline: 0;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+}
+.progress{
+    margin-bottom: 0;
+}
+.label{
+    font-weight: 400;
+}
+ul{
+    &.list-inline{
+        margin-left: 0;
+    }
+    margin-right: 0 !important;
+    li:last-child{
+        padding-right: 0;
+    }
+}
+.overflow-hidden{
+    overflow: hidden;
+}
+canvas{
+    display: block;
+}
+
+tr.bg-none{
+    background: none !important;
+    border: none !important;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: $bg-filter;
+    font-weight: 700;
+}
+
+
+/* Pace plugin */
+.pace {
+    // -webkit-pointer-events: none;
+    pointer-events: none;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+.pace-inactive {
+    display: none;
+}
+.pace .pace-progress {
+    background: #1b9bf8;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    height: 2px;
+}
+
+.sticky{
+    &-top{
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+    &-bottom{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}

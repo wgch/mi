@@ -1,0 +1,224 @@
+// All colors and borders
+
+/* Color variables */
+
+$bg-body: darken(#fff, 2%);
+$bg-header: darken(#fff, 15%);
+$bg-filter: #fff;
+$border-radius: 6px;
+$brand-secondary: #5CBD7D;
+$brand-green: #5CBD7D;
+$brand-primary: #0078a3;
+$brand-blue: #0078a3;
+$brand-accent: orange;
+$brand-grey: darken(white, 30%);
+$brand-grey: darken(white, 30%);
+$brand-grey-light: darken(white, 20);
+$brand-grey-lighter: darken(white, 10%);
+$brand-grey-lightest: darken(white, 6%);
+$brand-grey-dark: darken(white, 60%);
+// Mixins
+@mixin background-image($k) {
+    @if $k==random {
+        background: url('https://source.unsplash.com/all/1920x1080/?nature') no-repeat;
+    }
+    @else if $k==homepage {
+        background: url('https://source.unsplash.com/all/1920x1080/?landscape') no-repeat;
+    }
+    @else if $k==static {
+        background-image: url('');
+        background-repeat: no-repeat;
+    }
+}
+
+
+/* Borders */
+
+.border {
+    $property: border;
+    #{$property}: $brand-grey-light solid 1px;
+    &-top {
+        #{$property}-top: $brand-grey solid 1px;
+        &-light {
+            #{$property}-top: $brand-grey-light solid 1px;
+            &er {
+                #{$property}-top: $brand-grey-lighter solid 1px;
+            }
+        }
+    }
+    &-bottom {
+        #{$property}-bottom: $brand-grey solid 1px;
+        &-light {
+            #{$property}-bottom: $brand-grey-light solid 1px;
+            &er {
+                #{$property}-bottom: $brand-grey-lighter solid 1px;
+            }
+        }
+    }
+    &-left {
+        #{$property}-left: $brand-grey solid 1px;
+        &-light {
+            #{$property}-left: $brand-grey-light solid 1px;
+            &er {
+                #{$property}-left: $brand-grey-lighter solid 1px;
+            }
+        }
+    }
+    &-right {
+        #{$property}-right: $brand-grey solid 1px;
+        &-light {
+            #{$property}-right: $brand-grey-light solid 1px;
+            &er {
+                #{$property}-right: $brand-grey-lighter solid 1px;
+            }
+        }
+    }
+    &-light {
+        #{$property}: $brand-grey-light solid 1px;
+        &er {
+            #{$property}: $brand-grey-lighter solid 1px;
+        }
+    }
+    &-white {
+        border-color: #fff;
+    }
+    &-radius {
+        -webkit-border-radius: $border-radius;
+        -moz-border-radius: $border-radius;
+        border-radius: $border-radius;
+    }
+    &-2px {
+        #{$property}-width: 2px;
+    }
+    &-3px {
+        #{$property}-width: 3px;
+    }
+    &-5px {
+        #{$property}-width: 5px;
+    }
+    &-0 {
+        #{$property}: none;
+        outline: none;
+    }
+}
+
+
+/* Custom Buttons styles */
+
+.btn {
+    &-hd {
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+    &-md {
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+    &-xl {
+        padding: 15px 21px;
+        font-size: 30px;
+        line-height: 1.3333333;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px;
+    }
+    &-accent {
+        background: $brand-accent;
+        color: #fff;
+        &:hover,
+        &:focus,
+        &:visited {
+            background: lighten(orange, 10%);
+            color: #fff;
+        }
+    }
+}
+
+
+/* Background */
+
+.bg {
+    &-pattern {
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAPElEQVQoU2NkIA5IMhKhTpKBgeE5IYVgRSDD8CmEK8KnEEURLoUYirApxKoIXSFORcgK8SqCKSSoCKQQAI9pCSRK6e3oAAAAAElFTkSuQmCC);
+        background-repeat: repeat;
+    }
+    &-primary {
+        background-color: $brand-primary;
+    }
+    &-secondary {
+        background-color: $brand-secondary;
+    }
+    &-white {
+        background-color: #fff;
+    }
+    &-grey {
+        background-color: darken(#fff, 10%);
+        &-light {
+            background-color: darken(#fff, 5%);
+        }
+        &-lighter {
+            background-color: darken(#fff, 2%);
+        }
+        &-lightest {
+            background-color: $brand-grey-lightest;
+        }
+    }
+    &-none {
+        background: none !important;
+        border: none !important;
+    }
+}
+
+
+/* Text */
+
+.text {
+    &-underline {
+        padding-bottom: 2px;
+        border-bottom: 1px solid;
+        &-white {
+            padding-bottom: 1px;
+            border-bottom: 1px solid transparentize(#fff, .3);
+            &:hover {
+                border-bottom-color: #fff;
+            }
+        }
+    }
+    &-white {
+        color: #fff;
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+
+/* Inputs & Selects & Textareas */
+
+.input-color {
+    padding: 0 !important;
+    background: none !important;
+    border: none;
+    outline: none;
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    height: 34px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    &:before,
+    &:after {
+        content: '';
+        border: none;
+        outline: none;
+    }
+}
+
+.selected {
+    background-color: #fff;
+    color: $brand-green;
+    a {
+        color: black !important;
+    }
+}
